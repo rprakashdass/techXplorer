@@ -1,0 +1,53 @@
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/nav.css' %}" />
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block sidebar" style="position: fixed">
+      <h3 class="m-3 appName">techXplorer</h3>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2">
+          <a class="nav-link" id="01" href="{% url 'profile' user %}">@{{user}} - {{user.id}}</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link" href="{% url 'home' %}" id="02">Home</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link" href="{% url 'post' user %}" id="03">POST</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link" href="{% url 'hackathons' %}" id="08">Hackathon's Feed</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link" href="#" id="04">Api's Feed</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link" href="#" id="05">Repo's Feed</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link" href="#" id="06">LinkedIn's Feed</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link" href="#" id="07">Teams</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link" href="{#" id="09">Leetcode's Feed</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var currentUrl = window.location.href;
+    var navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(function(link) {
+      if (link.href === currentUrl) {
+        link.classList.add('active');
+      }
+    });
+  });
+  </script>
+{% endblock %}

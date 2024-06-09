@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}
+Post
+{% endblock title %}
+{% block content %}
+    <style>
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .btn-submit {
+            background-color: #A239CA;
+            color: white;
+            border: none;
+        }
+
+        .btn-submit:hover {
+            background-color: #8927A2;
+        }
+    </style>
+    <div class="container">
+        <h1 class="text-center mb-4">Submit Hackathon Post</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="author" class="form-label">Author</label>
+                <input type="text" class="form-control" id="author" name="author" value="{{user.username}}" disabled>
+            </div>
+            <div class="mb-3">
+                <label for="caption" class="form-label">Caption</label>
+                <input type="text" class="form-control" id="caption" name="caption" required>
+            </div>
+            <div class="mb-3">
+                <label for="posted_location" class="form-label">Posted Location</label>
+                <input type="text" class="form-control" id="posted_location" name="posted_location" value="{{location}}" disabled>
+            </div>
+            <div class="mb-3">
+                <label for="posted_support" class="form-label">Posted Support</label>
+                <input type="text" class="form-control" id="posted_support" name="posted_support" required>
+            </div>
+            <div class="mb-3">
+                <label for="queries" class="form-label">Queries</label>
+                <textarea class="form-control" id="queries" name="queries" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="demo_link" class="form-label">Demo Link</label>
+                <input type="url" class="form-control" id="demo_link" name="demo_link">
+            </div>
+            <div class="mb-3">
+                <label for="post_image" class="form-label">Upload Image</label>
+                <input type="file" class="form-control" id="post_image" name="post_image" accept="image/*">
+            </div>
+            <div class="mb-3">
+                <label for="post_video" class="form-label">Upload Video</label>
+                <input type="file" class="form-control" id="post_video" name="post_video" accept="video/*">
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-submit btn-lg">Submit</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock content %}
