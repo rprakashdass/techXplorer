@@ -1,0 +1,44 @@
+
+.h-head{
+    margin: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.h-head div{
+    width: 50%;
+    padding: 30px;
+    border: 2px solid var(--component-color);
+    border-radius: 20px;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content:last baseline;
+}
+
+.box{
+    color: blue!important;
+    width: 28%;
+    height: 20%;
+    margin: 2%;
+    background-color:var(--box-bg);
+    overflow: hidden;
+}
+
+.badge{
+    background-color: var(--component-color);
+    justify-content: right;
+}
+
+.descrp{
+    text-align:start;
+    margin: 20px;
+    line-clamp: 3px;
+}
+
+.box button{
+margin-left: 20px;
+}

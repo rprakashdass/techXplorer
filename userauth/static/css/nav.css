@@ -1,0 +1,33 @@
+nav{
+    background-color: var(--anchorColor);
+}
+
+.profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+a {
+    color: black;
+}
+
+/* General link styles */
+.sidebar .nav-link {
+    color: #F0E6EF;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+/* Active link styles */
+.sidebar .nav-link.active {
+    background-color: #4717F6!important;
+    color: #E7DFDD;
+    border-radius: 4px;
+}
+
+nav .nav-link a box-icon{
+    color: var(--component-color);
+}

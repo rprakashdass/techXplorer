@@ -4,14 +4,17 @@ from project import settings
 from userauth import views
 from django.conf.urls.static import static
 
+app_name = "userauth"
+
 urlpatterns = [
     path('',views.home, name='home'),
     path('logout_user/', views.logout_user, name='logout'),
     path('login_view/',views.login_view, name='login'),
     path('signup/',views.signup, name='signup'),
-    path('profile_update/<str:username>',views.profile_update, name='profile'),
+    path('profile/<str:username>',views.profile, name='profile'),
     path('submit_hackathon_post/<str:username>', views.submit_hackathon_post, name='post'),
     path('hackathons',views.hackathons_feed, name='hackathons'),
+    path('apis',views.apis_feed, name='apis'),
     # path('like-post/<str:id>', views.likes, name='like-post'),
     # path('#<str:id>', views.home_post),
     # path('explore',views.explore),

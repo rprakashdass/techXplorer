@@ -1,0 +1,191 @@
+:root{
+    --banner-width: 1010px;
+    --banner-height: 360px;
+    --photo-width: 250px; /* Assuming you meant to set this */
+    --photo-height: 250px;
+    --text-color: #fff;
+    --component-color: #a239ca;
+    --sidebar-bg: #130f21;
+}
+
+.name h1{
+    margin: 0 20px 20px 20px;
+}
+
+.name p{
+    color: #312b2b!important;
+}
+
+textarea{
+    color: var(--text-color);
+    background-color: transparent;
+    border-color: var(--component-color);
+}
+
+.profile-container{
+    width: 100%;
+}
+
+.flex-box{
+    margin: 10px;
+    width: 100%;
+    flex-direction: column;
+}
+
+hr{
+    color: #fff;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.vr{
+    height: 100%;
+    border-left: 2px solid #fff;
+}
+
+.c1{
+    margin-left: 10px;
+    grid-area: "c1";
+}
+
+.c2{
+    margin-left: 20px;
+    grid-area: "c2";
+    border-left: 2px solid #fff;
+}
+
+.banner-card{
+    width: inherit;
+}
+
+.profile-container .banner-card img{
+    height: var(--banner-height);
+    width: inherit;
+    background-color: aliceblue;
+    object-fit: fill;
+}
+
+.sec-1{
+    margin: 10px;
+    display: grid;
+    grid-template-areas: "col-1 col-2";
+    grid-template-columns: 500px 1fr;
+}
+
+.col-1{
+    grid-area: col-1;
+}
+
+.sec-1 .col-1 img{
+    width: var(--photo-width);
+    height: var(--photo-height);
+    border: 2px solid var(--component-color);
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+.col-2{
+    grid-area: col-2;
+}
+
+.sec-3 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin: 10px;
+}
+
+.sec-3 div {
+    border: 1px solid var(--component-color);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+ul{
+    list-style: none;
+}
+
+i{
+    margin: 10px;
+}
+
+.section1{
+    margin: 10px;
+    display: grid;
+    grid-template-areas: "c1 c2";
+    grid-template-columns: 75% 25%;
+}
+
+.c1 .trophie,
+.c1 .skills{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 20%;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.c1 .trophie div{
+    display: flex;
+    width: 195px;
+    padding: 25px;
+    border-radius: 2px;
+    justify-content: center;
+    background-color: var(--sidebar-bg);
+}
+
+.c1 .about-me div{
+    display: block;
+    margin: 20px;
+    background-color: var(--sidebar-bg);
+}
+
+.c1 .skills div{
+    display: flex;
+    border: 1px solid;
+    border-radius: 20px;
+    background-color: var(--sidebar-bg);
+}
+
+.skills div p{
+    margin: 10px;
+}
+
+.sm-links{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sm-links div{
+    display: flex;
+    border: 1px solid;
+    border-radius: 50px;
+    justify-content: center;
+    background-color: var(--sidebar-bg);
+}
+
+.iframes-info{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 700px) {
+    .profile-container .banner-card{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .sec-1 {
+        grid-template-areas:
+            "col-1"
+            "col-2";
+        grid-template-rows: 260px 1fr;
+    }
+}

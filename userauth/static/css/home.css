@@ -1,0 +1,41 @@
+.home{
+    /* position: absolute; */
+    margin: 20px 20px;
+}
+
+.sec1, .sec2{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.img-container{
+    object-fit: cover;
+    border: mediumblue;
+    width: 12rem;
+    height: inherit;
+}
+
+.sec1 .col, .sec2 .col{
+    border: 2px solid #fff;
+    flex-basis: 20%;
+}
+
+@media screen and (orientation:Portrait) {
+    .home {
+        border: 2px solid wheat;
+        width: 100%;
+        margin: 0 0px;
+    }
+    .rows{
+        flex-direction: column;
+    }
+    .rows .col-1{
+        width: 100%;
+    }
+    .rows .col-2{
+        display: none;
+    }
+}

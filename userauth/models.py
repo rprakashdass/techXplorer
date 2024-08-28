@@ -59,6 +59,13 @@ class User_register(AbstractBaseUser):
         return True
 
 class UserInfo(models.Model):
+    skills = (
+        ("python", "Python"),
+        ("sql" , "SQL"),
+        ("software", "Software"),
+        ("full stack", "Full stack developer"),
+        ("front end", "Front End developer"),
+    )
     user = models.OneToOneField(User_register, on_delete=models.CASCADE, related_name='info')
     name = models.CharField(max_length=255)
     company = models.CharField(max_length=255, blank=True, null=True)
@@ -70,7 +77,9 @@ class UserInfo(models.Model):
     institute = models.CharField(max_length=255, blank=True, null=True)
     branch = models.CharField(max_length=255, blank=True, null=True)
     interested_domains = models.CharField(max_length=255, blank=True, null=True)
-    interested_domains_to_follow = models.CharField(max_length=255, blank=True, null=True)
+    followers = models.ForeignKey(User_register, on_delete=models.CASCADE, related_name='followers', null=True)
+    following = models.ForeignKey(User_register, on_delete=models.CASCADE, related_name='following', null=True)
+    skills = models.CharField(max_length=255, choices=skills, default=None)
 
     def __str__(self):
         return f'{self.user.username} - {self.user.user_type}'

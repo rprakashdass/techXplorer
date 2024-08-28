@@ -1,0 +1,14 @@
+:root{
+    font: 1em sans-serif;
+}
+
+.child-1{
+    background-color: blueviolet;
+    width: 20%;
+}
+
+.child-2{
+    overflow: hidden;
+    background-color: rgb(194, 166, 221);
+    width: 20%;
+}

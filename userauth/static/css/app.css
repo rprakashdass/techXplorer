@@ -1,0 +1,57 @@
+
+/* Screen width set for mobile - 412 * 915 */
+
+:root{
+    --bg : #0E0B16;
+    /* --component-color: #221527; Color is raisin black */
+    --component-color: #a239ca; /*Color is raisin black*/
+    --sidebar-bg : #130f21;
+    --box-bg : #130f21;
+    --text-color : #fff;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 80px 1fr;
+    background-color: var(--bg);
+    box-sizing: border-box;
+}
+
+header{
+    background-color: #0D1117;
+    grid-column : 1 / 3;
+    grid-row: 1 / 2;
+}
+
+main{
+    grid-column : 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.sidebar{
+    overflow: auto;
+    /* background-color: var(--sidebar-bg); */
+    grid-column : 1 / 2;
+    grid-row: 2 / 3;
+    height: 100%;
+}
+
+main{
+    color: #E7DFDD;
+    /* background-color: #0E0B16; */
+}
+
+.appName{
+    color: #A239CA!important;
+}
+
+p, a, h1, h2, h3, h4, h5, h6, li , ul{
+    color: #E7DFDD!important;
+    background-color: transparent!important;
+}

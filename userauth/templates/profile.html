@@ -1,83 +1,91 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+<link rel="stylesheet" href="{% static '/css/profile.css' %}" />
 
-<div class="profile-header">
-    <div class="cover-photo"></div>
-    <div class="profile-info d-flex">
-        <div class="profile-photo">
-            <img src="{% static 'images/dev.png' %}" alt="Profile Photo">
-        </div>
-        <div class="profile-details">
-            <h2 class="profile-name">{{user_name}}</h2>
-            <p class="profile-title">{{user_type}}</p>
-            <p class="profile-location">Location</p>
-        </div>
+<div class="profile-container">
+    <div class="flex-box">
+        <!-- banner  card -->
+        <section class="banner-card">
+            <img src="{% static 'images/banner.jpg' %}">
+        </section>
+        <!-- Profile intro card -->
+        <section class="sec-1">
+            <div class="col-1">
+                <img src="{% static 'images/dev.png' %}">
+            </div>
+            <div class="col-2">
+                <p><span class="name">{{username}}</span>
+                <br>Works at India</p>
+            </div>
+        </section>
     </div>
-</div>
-
-<div class="profile-content">
-    <div class="row">
-        <div class="col-md-8">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">About</h5>
-                    <p class="card-text">Brief bio or summary about the user.</p>
-                </div>
+    <hr>
+    <section class="section1">
+        <div class="c1">
+            <div class="trophie">
+                <div class=""><p>First Visitor</p></div>
+                <div class=""><p>First Visitor</p></div>
+                <div class=""><p>First Visitor</p></div>
+                <div class=""><p>First Visitor</p></div>
+                <div class=""><p>First Visitor</p></div>
             </div>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Experience</h5>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <h6>Job Title</h6>
-                            <p>Company Name</p>
-                            <p>Duration</p>
-                            <p>Job Description</p>
-                        </li>
-                        <!-- Repeat for each job experience -->
-                    </ul>
-                </div>
+            <hr>
+            <div class="about-me">
+                <div class=""><p><i class='bx bxs-circle bx-burst'></i>Iam a __</p></div>
+                <div class=""><p><i class='bx bxs-circle bx-burst'></i>My Hobby is</p></div>
+                <div class=""><p><i class='bx bxs-circle bx-burst'></i>Goal were</p></div>
+                <div class=""><p><i class='bx bxs-circle bx-burst'></i>Target is</p></div>
+                <div class=""><p><i class='bx bxs-circle bx-burst'></i>First Expirience</p></div>
             </div>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Education</h5>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <h6>Degree</h6>
-                            <p>Institution Name</p>
-                            <p>Duration</p>
-                            <p>Additional Information</p>
-                        </li>
-                        <!-- Repeat for each educational experience -->
-                    </ul>
-                </div>
+            <hr>
+            <div class="skills">
+                <div class=""><p>Engineering</p></div>
+                <div class=""><p>Communication</p></div>
+                <div class=""><p>Art</p></div>
+                <div class=""><p>Public Speaking</p></div>
             </div>
-            <!-- Add more sections as needed -->
         </div>
-        <div class="col-md-4">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Contact Information</h5>
-                    <p>Email: user@example.com</p>
-                    <p>Phone: (123) 456-7890</p>
-                </div>
+        <div class="c2">
+            <h6>Social Media</h6>
+            <div class="sm-links">
+                <div>Facebook</div>
+                <div>Twitter</div>
+                <div>Whatsapp</div>
+                <div>ChatGpt</div>
+                <div>Email</div>
             </div>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Skills</h5>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Skill 1</li>
-                        <li class="list-group-item">Skill 2</li>
-                        <li class="list-group-item">Skill 3</li>
-                        <!-- Repeat for each skill -->
-                    </ul>
-                </div>
+            {# User Added iframes (to tell their profile viewers) #}
+            <h6> My Portfolio iframes</h6>
+            <div class="iframes-info">
+                <box-icon type='logo' name='linkedin-square' color="fuchsia"></box-icon>
+                <box-icon type='logo' name='github' color="fuchsia"></box-icon>
             </div>
-            <!-- Add more sections as needed -->
         </div>
-    </div>
+    </section>
+    <hr>
+    <section class="">
+    </section>
 </div>
 
 {% endblock %}
+
+{# <heading>Trophies</heading>
+        <section class="sec-3">
+            <div class="">First Visitor</div>
+            <div class="">First Visitor</div>
+            <div class="">First Visitor</div>
+            <div class="">First Visitor</div>
+        </section>
+        <h2 class="title">About Me</h2>
+        <section class="sec-4"></section>
+            <textarea disabled aria-disabled="">
+            loreum..
+            </textarea>
+            <ul>
+                <li>Social Media</li>
+                <li>Social Media</li>
+                <li>Social Media</li>
+                <li>Social Media</li>
+            </ul>
+        </section> #}

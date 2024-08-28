@@ -8,10 +8,11 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from .models import UserInfo, User_register, Hackathons, ExploreApi, AiModels
 from django.contrib import messages
+from .forms import SampleForm
 
 @login_required()
 def home(request):
-    return render(request, 'main.html')
+    return render(request, 'home.html')
 
 def login_view(request):
   if request.method == 'POST':
@@ -20,7 +21,7 @@ def login_view(request):
         userr = authenticate(request,username=username,password=pwd)
         if userr is not None:
             login(request,userr)
-            return redirect('/')
+            return redirect('/techXplorer')
         invalid="Invalid Credentials"
         return render(request, 'login.html',{'invalid':invalid})
 
@@ -51,27 +52,32 @@ def signup(request):
 
  return render(request, 'signup.html')
 
-
 @login_required()
 def logout_user(request):
     logout(request)
-    return redirect('/login_view', {'messages', 'succesfully logged out'})
-
+    return redirect('app:index')
 
 @login_required()
-def profile_update(request, username):
+def profile(request, username):
     user=User_register.objects.get(username=username)
-    userr = UserInfo.objects.get_or_create(user=user)
+    userr = UserInfo.objects.get(user=user)
     context = {
-        'user_name' : username,
-        'user_type' : user.user_type,
+        'username' : user.username,
+        'skills' : userr.state,
+        'bio' : userr.company,
     }
     return render(request, 'profile.html', context)
 
 @login_required()
 def hackathons_feed(request):
     hackathons = Hackathons.objects.all()
-    return render(request, 'hackathons_feed.html', {'hackathons': hackathons})
+    model = SampleForm()
+    return render(request, 'hackathons_feed.html', {'hackathons': hackathons, 'model' : model})
+
+
+@login_required()
+def apis_feed(request):
+    return render(request, 'apiFeed.html')
 
 
 @login_required

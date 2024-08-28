@@ -7,7 +7,8 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('userauth.urls')),
+    path('',include('app.urls')),
+    path('techXplorer/',include('userauth.urls')),
     path('accounts/', include('allauth.urls')),
 ]
 

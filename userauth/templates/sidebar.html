@@ -1,42 +1,35 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/nav.css' %}" />
-<div class="container-fluid">
-  <div class="row">
-    <nav class="col-md-2 d-none d-md-block sidebar" style="position: fixed">
-      <h3 class="m-3 appName">techXplorer</h3>
+
+    <nav>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2">
-          <a class="nav-link" id="01" href="{% url 'profile' user %}">@{{user}} - {{user.id}}</a>
+        <li class="nav-item mt-5 mb-2">
+          <a class="nav-link bx-flashing-hover" href="{% url 'userauth:home' %}" id="02"><box-icon name='home-alt-2' color="fuchsia" class="m-2"></box-icon> Home</a>
         </li>
         <li class="nav-item mb-2">
-          <a class="nav-link" href="{% url 'home' %}" id="02">Home</a>
+          <a class="nav-link" href="{% url 'userauth:post' user %}" id="03"><box-icon name='repost' color="fuchsia" class="m-2"></box-icon>POST</a>
         </li>
         <li class="nav-item mb-2">
-          <a class="nav-link" href="{% url 'post' user %}" id="03">POST</a>
+          <a class="nav-link" href="{% url 'userauth:hackathons' %}" id="08"><box-icon name='code-block' color="fuchsia" class="m-2"></box-icon>Hackathon's Feed</a>
         </li>
         <li class="nav-item mb-2">
-          <a class="nav-link" href="{% url 'hackathons' %}" id="08">Hackathon's Feed</a>
+          <a class="nav-link" href="{% url 'userauth:apis' %}" id="04"><box-icon type='logo' name='graphql' color="fuchsia" class="m-2"></box-icon>Api's Feed</a>
         </li>
         <li class="nav-item mb-2">
-          <a class="nav-link" href="#" id="04">Api's Feed</a>
+          <a class="nav-link" href="#" id="05"><box-icon name='github' type='logo' color="fuchsia" class="m-2"></box-icon>Repo's Feed</a>
         </li>
         <li class="nav-item mb-2">
-          <a class="nav-link" href="#" id="05">Repo's Feed</a>
+          <a class="nav-link" href="#" id="06"><box-icon name='linkedin' type='logo' color="fuchsia" class="m-2"></box-icon>LinkedIn's Feed</a>
         </li>
         <li class="nav-item mb-2">
-          <a class="nav-link" href="#" id="06">LinkedIn's Feed</a>
+          <a class="nav-link" href="#" id="07"><box-icon name='microsoft-teams' type='logo' color="fuchsia" class="m-2"></box-icon>Teams</a>
         </li>
         <li class="nav-item mb-2">
-          <a class="nav-link" href="#" id="07">Teams</a>
-        </li>
-        <li class="nav-item mb-2">
-          <a class="nav-link" href="{#" id="09">Leetcode's Feed</a>
+          <a class="nav-link" href="#" id="09"><box-icon name='code-alt' color="fuchsia" class="m-2"></box-icon>Leetcode's Feed</a>
         </li>
       </ul>
     </nav>
-  </div>
-</div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
